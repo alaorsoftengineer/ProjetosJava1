@@ -12,9 +12,8 @@ public class PrimeiraClasseJava {
 	    /*Escreve texto no Console*/
 		System.out.println("Meu primeiro programa em Java");
 		
-		
-		
-		
+		/*uma nova linha de comentario*/
+		System.out.println("Linguagem orientada a objetos");
 		
 	}
 
