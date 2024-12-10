@@ -3,6 +3,7 @@ package cursojava.executavel;
 import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
+import cursojava.classes.Disciplina;
 
 public class PrimeiraClasseJava {
 	
@@ -22,17 +23,7 @@ public class PrimeiraClasseJava {
 		String nome = JOptionPane.showInputDialog("Qual o nome do aluno ?");
 		String idade = JOptionPane.showInputDialog("Qual a idade ?");
 		
-		String disciplina1 = JOptionPane.showInputDialog("Qual a Disciplina 1 ?");
-		String Nota1 = JOptionPane.showInputDialog("Qual a Nota 1 ?");
 		
-		String disciplina2 = JOptionPane.showInputDialog("Qual a Disciplina 2 ?");
-		String Nota2 = JOptionPane.showInputDialog("Qual a Nota 2 ?");
-		
-		String disciplina3 = JOptionPane.showInputDialog("Qual a Disciplina 3 ?");
-		String Nota3 = JOptionPane.showInputDialog("Qual a Nota 3 ?");
-		
-		String disciplina4 = JOptionPane.showInputDialog("Qual a Disciplina 4 ?");
-		String Nota4 = JOptionPane.showInputDialog("Qual a Nota 4 ?");
 		
 		
 		
@@ -51,12 +42,30 @@ public class PrimeiraClasseJava {
 		
 		
 		
+		for (int pos = 1; pos <= 4; pos++) {
+			String nomeDisciplina = JOptionPane.showInputDialog("Nome da Disciplina"+pos+" ?");
+			String notaDisciplina = JOptionPane.showInputDialog("Nota da Disciplina"+pos+" ?");
+			Disciplina disciplina = new Disciplina();
+			disciplina.setDisciplina(nomeDisciplina);
+			disciplina.setNota(Double.valueOf(notaDisciplina));
+			
+			aluno1.getDisciplinas().add(disciplina);
+			
+		}
+		
+		
+		
+		
 		
 		System.out.println("Nome do aluno1 é = " + aluno1.getNome());
 		System.out.println("Idade do aluno1 é = " + aluno1.getIdade());
 		System.out.println("O CPF do aluno1 é = " + aluno1.getNumeroCpf());
 		System.out.println("A média da Nota do aluno1 é = " + aluno1.getMediaNota());
 		System.out.println("Resultado é: " + (aluno1.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
+		
+		
+		
+		
 		
 		
 		
