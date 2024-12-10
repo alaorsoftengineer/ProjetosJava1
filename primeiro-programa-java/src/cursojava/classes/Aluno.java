@@ -1,5 +1,7 @@
 package cursojava.classes;
 
+import java.util.ArrayList;
+import java.util.List;
 
 /*Esta é nossa Classe / Objeto que representa o aluno*/
 public class Aluno {
@@ -42,20 +44,24 @@ public class Aluno {
     }
     
     
-    private Disciplina disciplina = new Disciplina();
+    private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
-	public void setDisciplina(Disciplina disciplina) {
-		this.disciplina = disciplina;
+	
+    public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
 	}
-	
-	public Disciplina getDisciplina() {
-		return disciplina;
-	}
-	
     
-    /* Veremos os métodos SETTERS e GETTERS do objeto */
-    /* SET é para adicionar ou receber dados para os atributos */
-    /* GET é para resgatar ou obter o valor do atributo */
+    
+    public List<Disciplina> getDisciplinas() {
+		return disciplinas;
+	}
+    
+    
+    
+    
+    
+    
+    
     
     
     /* Recebe dados */
@@ -175,14 +181,26 @@ public class Aluno {
     
     /* Método que retorna a média do aluno */
 	public double getMediaNota() {
-	    return (disciplina.getNota1() + disciplina.getNota2() + disciplina.getNota3() + disciplina.getNota4()) / 4;
+	    return 0;
 	
     }
+	
+	
+	
+    
+    @Override
+	public String toString() {
+		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
+				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
+				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
+				+ serieMatriculado + "]";
+	}
     
     
-   
     
-    /* Método que verifica se o aluno está aprovado */
+    
+
+	/* Método que verifica se o aluno está aprovado */
     public boolean getAlunoAprovado() {
     	double media = this.getMediaNota();
     	if(media >= 70) {
