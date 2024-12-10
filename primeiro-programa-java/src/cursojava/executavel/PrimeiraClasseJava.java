@@ -54,6 +54,18 @@ public class PrimeiraClasseJava {
 		}
 		
 		
+		JOptionPane.showConfirmDialog(null, "Deseja Remover alguma disciplina ?");
+		
+		int escolha;
+		
+		escolha = 0;
+		
+		
+		if (escolha == 0) {
+			String disciplinaRemover = JOptionPane.showInputDialog("Qual Disciplina quer Remover?: 1, 2, 3 ou 4");
+			aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() -1);
+			
+		}
 		
 		
 		
