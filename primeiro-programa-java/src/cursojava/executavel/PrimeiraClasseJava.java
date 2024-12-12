@@ -63,18 +63,25 @@ public class PrimeiraClasseJava {
 			
 		}
 		
+		
+		
 		/* Esse parte remove a Disciplina selecionada (1, 2, 3 ou 4) */
-		JOptionPane.showConfirmDialog(null, "Deseja Remover alguma disciplina ?");
-		
-		int escolha;
-		
-		escolha = 0;
+		int escolha = JOptionPane.showConfirmDialog(null, "Deseja Remover alguma disciplina ?");
 		
 		
-		if (escolha == 0) {
+		if (escolha == 0) {  /* Opção SIM e Zero */
+		
+		int continuarRemover = 0;
+		
+		int posicao = 1;
+		
+		
+		while (continuarRemover == 0) {
 			String disciplinaRemover = JOptionPane.showInputDialog("Qual Disciplina quer Remover?: 1, 2, 3 ou 4");
-			aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() -1);
-			
+			aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() -posicao);
+			posicao++;
+			continuarRemover = JOptionPane.showConfirmDialog(null, "Continuar Remover ?");
+			}
 		}
 		
 			alunos.add(aluno1);
@@ -83,9 +90,7 @@ public class PrimeiraClasseJava {
 		for (Aluno aluno : alunos) {
 			
 			System.out.println("Nome do aluno1 é = " + aluno.getNome());
-			System.out.println("Idade do aluno1 é = " + aluno.getIdade());
-			System.out.println("O CPF do aluno1 é = " + aluno.getNumeroCpf());
-			System.out.println("A média da Nota do aluno1 é = " + aluno.getMediaNota());
+			System.out.println("A média da Nota do aluno é = " + aluno.getMediaNota());
 			System.out.println("Resultado é: " + (aluno.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
 			System.out.println("--------------------------------------------------------------------");
 			
