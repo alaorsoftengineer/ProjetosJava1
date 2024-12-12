@@ -221,11 +221,19 @@ public class Aluno {
     	
     public String getAlunoAprovado2() {
         double media = this.getMediaNota();
-        if (media >= 70) {
-            return "Aluno está Aprovado";
+        if (media >= 50) {
+        	if (media >= 70) {
+        		return "Aluno está Aprovado";
+        		
+        	}else {
+        		return "Aluno em Recuperação";
+        	}
+        		
         } else {
-            return "Aluno está Reprovado";
+        	return "Aluno está Reprovado";
         }
+        		
+        		
     	
     	
     	

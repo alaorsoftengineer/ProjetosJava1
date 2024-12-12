@@ -1,5 +1,8 @@
 package cursojava.executavel;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
@@ -14,13 +17,20 @@ public class PrimeiraClasseJava {
 	public static void main(String[] args) {
 		
 		
+		List<Aluno> alunos = new ArrayList<Aluno>();
+		
+		
+		for(int qtd = 0; qtd <= 2; qtd++) {
+			
+		
+		
 		
 		/* new Aluno() é uma instancia (Criação de um objeto) */
 		
 		/* aluno1 (variável) é uma referência para o objeto Aluno() */
 		
 		
-		String nome = JOptionPane.showInputDialog("Qual o nome do aluno ?");
+		String nome = JOptionPane.showInputDialog("Qual o nome do aluno "+qtd+" ?");
 		String idade = JOptionPane.showInputDialog("Qual a idade ?");
 		
 		
@@ -53,7 +63,7 @@ public class PrimeiraClasseJava {
 			
 		}
 		
-		
+		/* Esse parte remove a Disciplina selecionada (1, 2, 3 ou 4) */
 		JOptionPane.showConfirmDialog(null, "Deseja Remover alguma disciplina ?");
 		
 		int escolha;
@@ -67,13 +77,22 @@ public class PrimeiraClasseJava {
 			
 		}
 		
+			alunos.add(aluno1);
+		}
+		
+		for (Aluno aluno : alunos) {
+			
+			System.out.println("Nome do aluno1 é = " + aluno.getNome());
+			System.out.println("Idade do aluno1 é = " + aluno.getIdade());
+			System.out.println("O CPF do aluno1 é = " + aluno.getNumeroCpf());
+			System.out.println("A média da Nota do aluno1 é = " + aluno.getMediaNota());
+			System.out.println("Resultado é: " + (aluno.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
+			System.out.println("--------------------------------------------------------------------");
+			
+			
+		}
 		
 		
-		System.out.println("Nome do aluno1 é = " + aluno1.getNome());
-		System.out.println("Idade do aluno1 é = " + aluno1.getIdade());
-		System.out.println("O CPF do aluno1 é = " + aluno1.getNumeroCpf());
-		System.out.println("A média da Nota do aluno1 é = " + aluno1.getMediaNota());
-		System.out.println("Resultado é: " + (aluno1.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
 		
 		
 		
