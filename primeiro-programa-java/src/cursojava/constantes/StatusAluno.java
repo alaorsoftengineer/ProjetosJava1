@@ -1,5 +1,9 @@
+
+
 package cursojava.constantes;
 
+
+/* Classes e contantes estáticas */
 public class StatusAluno {
 	
 	
