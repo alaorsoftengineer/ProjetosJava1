@@ -89,11 +89,14 @@ public class PrimeiraClasseJava {
 		
 		for (Aluno aluno : alunos) {
 			
-			System.out.println("Nome do aluno1 é = " + aluno.getNome());
-			System.out.println("A média da Nota do aluno é = " + aluno.getMediaNota());
-			System.out.println("Resultado é: " + (aluno.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
-			System.out.println("--------------------------------------------------------------------");
 			
+			if (aluno.getNome().equalsIgnoreCase("alex")) {
+				System.out.println("Nome do aluno1 é = " + aluno.getNome());
+				System.out.println("A média da Nota do aluno é = " + aluno.getMediaNota());
+				System.out.println("Resultado é: " + (aluno.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
+				System.out.println("--------------------------------------------------------------------");
+				break;
+			}
 			
 		}
 		
