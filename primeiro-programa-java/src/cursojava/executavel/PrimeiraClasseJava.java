@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
+import cursojava.constantes.StatusAluno;
 
 public class PrimeiraClasseJava {
 	
@@ -20,7 +21,13 @@ public class PrimeiraClasseJava {
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
 		
-		for(int qtd = 0; qtd <= 2; qtd++) {
+		List<Aluno> alunosAprovados = new ArrayList<Aluno>();
+		List<Aluno> alunosRecuperacao = new ArrayList<Aluno>();
+		List<Aluno> alunosReprovados = new ArrayList<Aluno>();
+		
+		
+		
+		for(int qtd = 0; qtd <= 5; qtd++) {
 			
 		
 		
@@ -52,56 +59,24 @@ public class PrimeiraClasseJava {
 		
 		
 		
-		for (int pos = 1; pos <= 4; pos++) {
-			String nomeDisciplina = JOptionPane.showInputDialog("Nome da Disciplina"+pos+" ?");
-			String notaDisciplina = JOptionPane.showInputDialog("Nota da Disciplina"+pos+" ?");
-			Disciplina disciplina = new Disciplina();
-			disciplina.setDisciplina(nomeDisciplina);
-			disciplina.setNota(Double.valueOf(notaDisciplina));
-			
-			aluno1.getDisciplinas().add(disciplina);
-			
-		}
+		alunos.add(aluno1);
 		
-		
-		
-		/* Esse parte remove a Disciplina selecionada (1, 2, 3 ou 4) */
-		int escolha = JOptionPane.showConfirmDialog(null, "Deseja Remover alguma disciplina ?");
-		
-		
-		if (escolha == 0) {  /* Opção SIM e Zero */
-		
-		int continuarRemover = 0;
-		
-		int posicao = 1;
-		
-		
-		while (continuarRemover == 0) {
-			String disciplinaRemover = JOptionPane.showInputDialog("Qual Disciplina quer Remover?: 1, 2, 3 ou 4");
-			aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() -posicao);
-			posicao++;
-			continuarRemover = JOptionPane.showConfirmDialog(null, "Continuar Remover ?");
-			}
-		}
-		
-			alunos.add(aluno1);
-		}
 		
 		for (Aluno aluno : alunos) {
 			
-			
-			if (aluno.getNome().equalsIgnoreCase("alex")) {
-				System.out.println("Nome do aluno1 é = " + aluno.getNome());
-				System.out.println("A média da Nota do aluno é = " + aluno.getMediaNota());
-				System.out.println("Resultado é: " + (aluno.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
-				System.out.println("--------------------------------------------------------------------");
-				break;
-			}
+			if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.APROVADO)) {
+				
+				alunosAprovados.add(aluno);
+			}else
+				if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.RECUPERACAO)) {
+					alunosRecuperacao.add(aluno);
+					
+				}else if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.REPROVADO)) {
+					alunosReprovado.add(aluno);
+					
+				}
 			
 		}
-		
-		
-		
 		
 		
 		
@@ -125,5 +100,7 @@ public class PrimeiraClasseJava {
 		
 	}
 	
+	
+   }
 	
 }
