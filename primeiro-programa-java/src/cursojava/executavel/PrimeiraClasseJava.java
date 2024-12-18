@@ -19,6 +19,17 @@ public class PrimeiraClasseJava {
 	public static void main(String[] args) {
 		
 		
+		
+		
+		String login = JOptionPane.showInputDialog("Informe o login");
+		String senha = JOptionPane.showInputDialog("Informe a senha");
+		
+		if (login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("admin")) {
+			
+		
+		
+		
+		
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
 		
@@ -73,14 +84,14 @@ public class PrimeiraClasseJava {
 		for (Aluno aluno : alunos) {
 			
 			if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.APROVADO)) {
-				maps.get(StatusAluno.APROVADO).add(aluno));
+				maps.get(StatusAluno.APROVADO).add(aluno);
 				
 			}else
 				if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.RECUPERACAO)) {
-					maps.get(StatusAluno.RECUPERACAO).add(aluno));
+					maps.get(StatusAluno.RECUPERACAO).add(aluno);
 					
 				}else if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.REPROVADO)) {
-					maps.get(StatusAluno.REPROVADO).add(aluno));
+					maps.get(StatusAluno.REPROVADO).add(aluno);
 					
 				}
 			
@@ -125,5 +136,7 @@ public class PrimeiraClasseJava {
 	
 	
    }
+		
+}
 	
 }
