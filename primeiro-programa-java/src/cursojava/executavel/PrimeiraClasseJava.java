@@ -78,7 +78,22 @@ public class PrimeiraClasseJava {
 			
 		}
 		
+		System.out.println("---------------Lista dos Aprovados---------------");
+		for (Aluno aluno : alunosAprovados) {
+			System.out.println("Resultado = " + aluno.getAlunoAprovado2() + " com média de = " + aluno.getMediaNota());
+		}
 		
+		
+		System.out.println("---------------Lista dos Reprovados---------------");
+		for (Aluno aluno : alunosReprovados) {
+			System.out.println("Resultado = " + aluno.getAlunoAprovado2() + " com média de = " + aluno.getMediaNota());
+		}
+		
+		
+		System.out.println("---------------Lista dos Recuperação---------------");
+		for (Aluno aluno : alunosRecuperacao) {
+			System.out.println("Resultado = " + aluno.getAlunoAprovado2() + " com média de = " + aluno.getMediaNota());
+		}
 		
 		
 		
