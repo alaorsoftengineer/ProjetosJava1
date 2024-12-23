@@ -24,6 +24,8 @@ public class PrimeiraClasseJava {
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		
+		
+		/* Validação de senha e login */
 		if (login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("admin")) {
 			
 		
