@@ -2,7 +2,7 @@ package cursojava.classes;
 
 
 /* Classe pai ou classe master ou superclasse (Atributos comuns a todos os objetos filhos) */
-public class Pessoa {
+public abstract class Pessoa {
 	
 	
 	protected String nome;
@@ -14,8 +14,8 @@ public class Pessoa {
 	protected String nomePai;
 	
 	
-	
-	
+	/* O método abstrato é que fica na classe pai, é obrigatório para as classes filhas */
+	public abstract double salario(); 
 	
 	
 	
@@ -64,6 +64,11 @@ public class Pessoa {
 	
 	
 	
+	
+	/* Retorna true caso verdadeiro */
+	public boolean pessoaMaiorIdade() {
+		return idade >= 18;
+	} 
 	
 	
 	

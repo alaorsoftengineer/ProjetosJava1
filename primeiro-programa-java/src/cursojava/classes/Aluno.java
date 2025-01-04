@@ -209,6 +209,18 @@ public class Aluno extends Pessoa {
     	
     }
 
+    
+    @Override    /* Identifica método Sobreescrito */
+    public boolean pessoaMaiorIdade() {
+    	
+    	return super.pessoaMaiorIdade();
+    }
+
+	@Override
+	public double salario() {
+		
+		return 1500.90;
+	}
 	
     
       
