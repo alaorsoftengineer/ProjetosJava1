@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
+import cursojava.classes.Secretario;
 import cursojava.constantes.StatusAluno;
 
 public class PrimeiraClasseJava {
@@ -25,8 +26,13 @@ public class PrimeiraClasseJava {
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		
 		
+		Secretario secretario = new Secretario;
+		secretario.setLogin(login);
+		secretario.setSenha(senha);
+		
+		
 		/* Validação de senha e login */
-		if (login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("admin")) {
+		if (secretario.autenticar()) {
 			
 		
 		
