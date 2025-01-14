@@ -9,7 +9,9 @@ import javax.swing.JOptionPane;
 import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
+import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
+import cursojava.interfaces.PermitirAcesso;
 
 public class PrimeiraClasseJava {
 	
@@ -26,13 +28,15 @@ public class PrimeiraClasseJava {
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		
 		
-		Secretario secretario = new Secretario;
-		secretario.setLogin(login);
-		secretario.setSenha(senha);
+		FuncaoAutenticacao autenticacao = new FuncaoAutenticacao();
+		
+	
+		PermitirAcesso permitirAcesso = new Secretario(login, senha);
 		
 		
+			
 		/* Validação de senha e login */
-		if (secretario.autenticar()) {
+		if (autenticacao().autenticarCursoJava(PermitirAcesso)) {
 			
 		
 		
@@ -124,27 +128,34 @@ public class PrimeiraClasseJava {
 		
 		
 		
-		
-		/* ========================================================================== */
-		
+	} 
 		
 		
-		Aluno aluno2 = new Aluno(); /* Aqui será o Pedro */
-		
-		Aluno aluno3 = new Aluno(); /* Aqui será o Alex */
-		
-		Aluno aluno4 = new Aluno("Maria");
-		
-		Aluno aluno5 = new Aluno("José", 50);
+	
+		} else {
+			JOptionPane.showMessageDialog(null, "Acesso não permitido");
+			
+		}
 		
 		
-		
-		
+
+	
 	}
-	
-	
-   }
+
+	private static FuncaoAutenticacao autenticacao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private static Secretario permitirAcesso() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 		
-}
-	
-}
+		
+}	
+		
+		
+		
+		
+
