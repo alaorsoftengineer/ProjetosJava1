@@ -36,7 +36,7 @@ public class PrimeiraClasseJava {
 		
 			
 		/* Validação de senha e login */
-		if (autenticacao().autenticarCursoJava(PermitirAcesso)) {
+		if (autenticacao().autenticarCursoJava(permitirAcesso)) {
 			
 		
 		
