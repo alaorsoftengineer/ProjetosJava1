@@ -1,3 +1,4 @@
+
 package cursojava.classesauxiliares;
 
 import cursojava.interfaces.PermitirAcesso;
