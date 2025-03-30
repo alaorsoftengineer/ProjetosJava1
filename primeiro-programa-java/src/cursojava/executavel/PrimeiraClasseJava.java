@@ -29,20 +29,24 @@ public class PrimeiraClasseJava {
 
             FuncaoAutenticacao autenticacao = new FuncaoAutenticacao();
             PermitirAcesso permitirAcesso = new Secretario(login, senha);
+            
 
             // Correção: Chamando a autenticação corretamente
             if (autenticacao.autenticarCursoJava(permitirAcesso)) {
                 
                 List<Aluno> alunos = new ArrayList<>();
                 HashMap<String, List<Aluno>> maps = new HashMap<>();
+                
 
                 maps.put(StatusAluno.APROVADO, new ArrayList<>());
                 maps.put(StatusAluno.REPROVADO, new ArrayList<>());
                 maps.put(StatusAluno.RECUPERACAO, new ArrayList<>());
+                
 
                 for (int qtd = 0; qtd < 5; qtd++) { // Correção: <= 5 pode levar a um loop extra
                     String nome = JOptionPane.showInputDialog("Qual o nome do aluno " + (qtd + 1) + "?");
                     String idade = JOptionPane.showInputDialog("Qual a idade?");
+                    
 
                     Aluno aluno = new Aluno();
                     aluno.setNome(nome);
@@ -56,8 +60,10 @@ public class PrimeiraClasseJava {
                     
                     if (status.equalsIgnoreCase(StatusAluno.APROVADO)) {
                         maps.get(StatusAluno.APROVADO).add(aluno);
+                        
                     } else if (status.equalsIgnoreCase(StatusAluno.RECUPERACAO)) {
                         maps.get(StatusAluno.RECUPERACAO).add(aluno);
+                        
                     } else if (status.equalsIgnoreCase(StatusAluno.REPROVADO)) {
                         maps.get(StatusAluno.REPROVADO).add(aluno);
                     }
@@ -91,6 +97,9 @@ public class PrimeiraClasseJava {
         } catch (Exception e) { // Captura todas as exceções não previstas
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Erro inesperado: " + e.getClass().getName());
+        }finally { /* Sempre é executado ocorrendo erros ou não. */
+        	JOptionPane.showMessageDialog(null, "Obrigado por usar JAVA");
+        	
         }
     }
 }
