@@ -50,7 +50,7 @@ public class PrimeiraClasseJava {
 
                     Aluno aluno = new Aluno();
                     aluno.setNome(nome);
-                    aluno.setIdade(Integer.parseInt(idade)); // Correção: Integer.valueOf() também funciona
+	                aluno.setIdade(Integer.parseInt(idade)); // Correção: Integer.valueOf() também funciona
 
                     alunos.add(aluno);
                 }
