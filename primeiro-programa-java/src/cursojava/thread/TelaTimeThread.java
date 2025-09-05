@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.lang.reflect.Constructor;
 
 import javax.swing.JButton;
@@ -11,6 +12,7 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.plaf.InsetsUIResource;
 
 
 
@@ -36,7 +38,7 @@ public class TelaTimeThread extends JDialog{
 		
 		
 		setTitle("Minha tela de time com Thread");
-		setSize(new Dimension(290, 240)); /* Dimensões (Width, Height) */
+		setSize(new Dimension(320, 260)); /* Dimensões (Width, Height) */
 		
 		
 		setLocationRelativeTo(null);
@@ -49,6 +51,9 @@ public class TelaTimeThread extends JDialog{
 		GridBagConstraints gridBagConstraints = new GridBagConstraints();
 		gridBagConstraints.gridx = 0;
 		gridBagConstraints.gridy = 0;
+		gridBagConstraints.gridwidth = 2;
+		gridBagConstraints.insets = new Insets(5, 10, 5, 5);
+		gridBagConstraints.anchor = gridBagConstraints.WEST;
 		
 		
 		descricaoHora.setPreferredSize(new Dimension(200, 25));
@@ -58,6 +63,7 @@ public class TelaTimeThread extends JDialog{
 		
 		mostraTempo.setPreferredSize(new Dimension(200, 25));
 		gridBagConstraints.gridy++;
+		mostraTempo.setEditable(false);
 		jPanel.add(mostraTempo, gridBagConstraints);
 		
 		
@@ -69,7 +75,15 @@ public class TelaTimeThread extends JDialog{
 		
 		mostraTempo2.setPreferredSize(new Dimension(200, 25));
 		gridBagConstraints.gridy++;
+		mostraTempo2.setEditable(false);
 		jPanel.add(mostraTempo2, gridBagConstraints);
+		
+		
+		
+		//********************************************************
+		
+		
+		gridBagConstraints.gridwidth = 1;
 		
 		
 		jButton.setPreferredSize(new Dimension(92, 25));
