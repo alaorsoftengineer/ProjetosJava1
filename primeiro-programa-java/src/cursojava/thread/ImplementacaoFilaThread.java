@@ -29,10 +29,11 @@ public class ImplementacaoFilaThread extends Thread {
 		while (true) {
 		
 		
-		Iterator iteracao = pilha_fila.iterator();
+		
 		synchronized (pilha_fila) {  /* Bloquear o acesso a esta lista por outros processos */
 			
 			
+			Iterator iteracao = pilha_fila.iterator();
 			while (iteracao.hasNext()) {  /* Enquanto conter dados na lista irá processar */
 				
 				
@@ -50,7 +51,7 @@ public class ImplementacaoFilaThread extends Thread {
 				iteracao.remove();
 				
 				try {
-					Thread.sleep(100);  /* Dar um tempo para descarga de memoria */
+					Thread.sleep(1000);  /* Dar um tempo para descarga de memoria */
 				} catch (InterruptedException e) {
 						e.printStackTrace();
 				}
