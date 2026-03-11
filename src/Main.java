@@ -3,22 +3,37 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        // SHOPPING CART PROGRAM
+
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter your name: ");
-        String name = scanner.nextLine();
+        String item;
+        double price;
+        int quantity;
+        char currency = '$';
+        double total;
 
-        System.out.println("Enter your age: ");
-        int age = scanner.nextInt();
 
-        System.out.println("What is your gpa: ");
-        double gpa = scanner.nextDouble();
+        System.out.print("What item would you like to buy?: ");
+        item = scanner.next();
 
-        System.out.println("Hello, " + name);
-        System.out.println("You are" + " " + age + " years old.");
-        System.out.println("You gpa is:" + " " + gpa);
+        System.out.print("What is the price for each?: ");
+        price = scanner.nextDouble();
+
+        System.out.print("How many would you like?: ");
+        quantity = scanner.nextInt();
+
+        total = price * quantity;
+
+        System.out.println("You have bought" + " " + quantity + " " + item + "/s");
+        System.out.println("Your total is " + currency + total);
+
+
 
         scanner.close();
+
+
+
 
 
     }
